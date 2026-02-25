@@ -129,15 +129,6 @@ body { margin: 0 !important; }
   align-items: center;
 }
 
-.greedy-nav .visible-links > li.masthead__menu-item--lg {
-  margin-right: auto;
-}
-
-/* spacing for items after title */
-.greedy-nav .visible-links > li.masthead__menu-item--lg ~ li {
-  margin-left: 16px;
-}
-
 .site-title {
   font-weight: 400 !important;
   text-decoration: none !important;
