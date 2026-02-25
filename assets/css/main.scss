@@ -74,36 +74,25 @@ body { margin: 0 !important; }
   grid-template-columns: 1fr !important;
 }
 
-/* Center ALL page content consistently */
-.initial-content {
-  max-width: 980px;
-  margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
 /* Also center footer content width */
 .page__footer {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-.page__footer footer {
-  max-width: 980px;
-  margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
+.page__footer {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.page__footer .custom-footer{
+  width: 100%;
+  background: #2f2f2f;
+  color: #fff;
+  text-align: center;
+  padding: 12px 10px;
+  font-size: 14px;
+  margin: 0;
 }
 
-/* Site title should look like plain text link (no active underline/bold) */
-.site-title {
-  font-weight: 400 !important;
-  text-decoration: none !important;
-  border-bottom: 0 !important;
-  box-shadow: none !important;
-}
-.site-title:hover {
-  text-decoration: none !important;
-}
 
 /* ============================= */
 /* Layout: centered content      */
@@ -147,3 +136,9 @@ html, body { overflow-x: hidden; }
 
 /* Make sure footer is in normal document flow */
 .page__footer { position: static !important; }
+
+/* Sticky footer layout */
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; }
+.initial-content { flex: 1; }
+.page__footer { margin-top: auto; }
