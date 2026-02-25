@@ -108,3 +108,10 @@ body { margin: 0 !important; }
   padding-left: 24px;   /* 모바일/좁은 화면 여백 */
   padding-right: 24px;
 }
+
+.masthead__inner-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
