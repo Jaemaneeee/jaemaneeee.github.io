@@ -42,39 +42,14 @@
     "vendor/font-awesome/brands"
 ;
 
-.author__avatar img {
-  border-radius: 0 !important;
-  width: 200% !important;
-  max-width: 360px !important;
-  height: auto !important;
-}
-
-/* Overlay name/bio/icons on top of the image */
+/* Bigger square avatar (safe) */
 .author__avatar {
-  position: relative !important;
+  width: 360px;
+  max-width: 360px;
 }
-
-.author__content,
-.author__urls-wrapper {
-  position: relative !important;
-  margin-top: -120px !important;   /* 텍스트가 사진 위로 올라오게 */
-  padding: 12px 14px !important;
-  background: rgba(0,0,0,0.35) !important;
-  color: #fff !important;
-  max-width: 360px !important;
-}
-
-.author__content a,
-.author__urls-wrapper a {
-  color: #fff !important;
-}
-.site-footer,
-.page__footer {
-  position: static !important;   /* fixed/sticky 강제 해제 */
-}
-html, body {
-  overflow-y: auto !important;   /* 스크롤 강제 */
-}
-body {
-  padding-bottom: 80px !important;
+.author__avatar img {
+  width: 360px;
+  height: auto;
+  border-radius: 0;
+  display: block;
 }
