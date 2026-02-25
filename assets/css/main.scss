@@ -132,23 +132,19 @@ body { margin: 0 !important; }
   max-width: 1000px;
   margin: 0 auto;
 }
-
-/* ============================= */
-/*  Navbar layout customization  */
-/* ============================= */
-
-/* nav 전체를 flex로 */
+/* Keep menu items visible and push them right */
 .greedy-nav .visible-links {
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
-/* site title은 왼쪽 고정 */
-.masthead__menu-item--lg {
+/* Site title stays left */
+.greedy-nav .visible-links > li.masthead__menu-item--lg {
   margin-right: auto;
 }
 
-/* About 등 active 탭 underline 더 깔끔하게 */
-.greedy-nav .visible-links li.selected a {
-  border-bottom: 2px solid #222;
+/* Spacing ONLY for menu items after the title */
+.greedy-nav .visible-links > li.masthead__menu-item--lg ~ li {
+  margin-left: 18px;   /* 14~20 추천 */
 }
