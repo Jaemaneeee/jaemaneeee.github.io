@@ -14,19 +14,3 @@ I was born in Seoul, South Korea. I Received BS in Materials Science and Enginee
   <div>✉ jae-man.park@yale.edu</div>
   <div><a href="https://scholar.google.com">Google Scholar</a></div>
 </div>
-
-<img src="/images/Front image.jpg" style="width:100%; max-width:450px;"><img src="/images/yourphoto.jpg" style="width:100%; max-width:450px;">
-<div style="position: relative; width: 100%; max-width: 500px;">
-  <img src="/images/Front image.jpg" style="width:100%;">
-  <div style="
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      color: white;
-      font-size: 28px;
-      font-weight: bold;
-  ">
-    Jaeman Park <br>
-    <span style="font-size:16px;">Life is journey.</span>
-  </div>
-</div>
