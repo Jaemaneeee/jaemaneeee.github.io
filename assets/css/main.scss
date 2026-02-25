@@ -46,4 +46,10 @@
   max-width: 260px !important;
   height: auto !important;
 }
+/* Hide theme toggle button (gear) */
+.theme-toggle,
+.toggle-theme,
+.dark-mode-toggle {
+  display: none !important;
+}
 ;
