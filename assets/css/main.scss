@@ -116,3 +116,19 @@ body { margin: 0 !important; }
 .site-title:hover {
   text-decoration: none !important;
 }
+
+/* ============================= */
+/*  Centered content layout      */
+/* ============================= */
+
+.page {
+  max-width: 1000px;   /* 내용 최대 너비 (조절 가능) */
+  margin: 0 auto;      /* 가운데 정렬 */
+  padding-left: 40px;  /* 좌우 여백 */
+  padding-right: 40px;
+}
+
+.page__content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
