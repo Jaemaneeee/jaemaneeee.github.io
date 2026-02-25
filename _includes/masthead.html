@@ -15,12 +15,21 @@
             <a href="{{ base_path }}/">{{ site.title }}</a>
           </li>
           {% for link in site.data.navigation.main %}
+          {% assign current = page.url | default: "/" %}
+{% if current == "" %}{% assign current = "/" %}{% endif %}
+{% if current == "/index.html" %}{% assign current = "/" %}{% endif %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
+           {% assign link_url = link.url | default: "/" %}
+{% if link_url == "" %}{% assign link_url = "/" %}{% endif %}
+
+<li class="masthead__menu-item
+  {% if link_url == "/" and current == "/" %}selected
+  {% elsif link_url != "/" and current contains link_url %}selected
+  {% endif %}">
               <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}
