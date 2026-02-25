@@ -139,3 +139,36 @@ body {
 .page__footer-copyright {
   display: none !important;
 }
+
+/* === FORCE footer full-bleed (edge-to-edge) === */
+.page__footer {
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  padding: 0 !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
+
+/* Some themes wrap footer contents */
+.page__footer > footer,
+.page__footer .wrapper,
+.page__footer .page__footer-inner,
+.page__footer .page__footer-copyright,
+.page__footer .page__footer-follow {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Your bar */
+.page__footer .custom-footer {
+  width: 100% !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* === FORCE no gap below footer === */
+body { margin: 0 !important; padding-bottom: 0 !important; }
+.page__footer { margin-bottom: 0 !important; }
