@@ -141,8 +141,18 @@ html, body { overflow-x: hidden; }
 body { margin: 0 !important; padding-bottom: 0 !important; }
 .page__footer { margin-bottom: 0 !important; }
 
-/* Move nav tabs slightly toward center */
+/* ===== Nav: move tabs slightly toward center WITHOUT triggering hamburger ===== */
+
+/* 탭들(About, Research...)이 들어있는 UL을 살짝 왼쪽으로 당김
+   transform은 레이아웃 폭 계산에 거의 영향을 안 줘서 햄버거 트리거가 덜 생김 */
 .greedy-nav .visible-links {
-  display: flex;
-  align-items: center;
+  transform: translateX(-30px);
+}
+
+/* 화면이 좁아질 때는 이동량 줄여서 안전하게 */
+@media (max-width: 900px) {
+  .greedy-nav .visible-links { transform: translateX(-10px); }
+}
+@media (max-width: 700px) {
+  .greedy-nav .visible-links { transform: none; }
 }
