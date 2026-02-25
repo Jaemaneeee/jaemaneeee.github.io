@@ -5,7 +5,13 @@
       <nav id="site-nav" class="greedy-nav">
         <button><span class="navicon"></span></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
+          {% assign current = page.url %}
+{% if current == '/index.html' %}{% assign current = '/' %}{% endif %}
+
+{% assign link_url = link.url %}
+{% if link_url == '' %}{% assign link_url = '/' %}{% endif %}
+
+<li class="masthead__menu-item {% if link_url == '/' and current == '/' %}selected{% elsif link_url != '/' and current contains link_url %}selected{% endif %}">
             <a href="{{ base_path }}/">{{ site.title }}</a>
           </li>
           {% for link in site.data.navigation.main %}
