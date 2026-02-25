@@ -96,3 +96,15 @@ body { margin: 0 !important; }
 .layout--single {
   grid-template-columns: 1fr !important;
 }
+
+/* Center content with comfortable side margins */
+.page__content,
+.archive,
+.page__inner-wrap,
+#main {
+  max-width: 980px;     /* 900~1100 사이로 취향 */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;   /* 모바일/좁은 화면 여백 */
+  padding-right: 24px;
+}
