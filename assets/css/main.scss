@@ -74,7 +74,7 @@ html, body { overflow-x: hidden; }
 }
 
 /* =========================================================
-   Site title style (keep simple; avoid nav width bugs)
+   Site title style
    ========================================================= */
 .site-title {
   font-weight: 400 !important;
@@ -85,23 +85,9 @@ html, body { overflow-x: hidden; }
 .site-title:hover { text-decoration: none !important; }
 
 /* =========================================================
-   FOOTER: clean + full-width + STICKY to bottom
+   FOOTER: full-width bar, appears ONLY at end of page scroll
+   (NO sticky/flex layout)
    ========================================================= */
-
-/* The theme sometimes injects an inline margin-bottom on body.
-   Force it off so footer can sit at the bottom. */
-body { margin-bottom: 0 !important; }
-
-/* Sticky footer layout */
-html, body { height: 100%; }
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Main content grows so footer is pushed to the bottom */
-#main { flex: 1 0 auto; }
 
 /* Remove theme footer background/spacing */
 .page__footer,
@@ -112,29 +98,7 @@ body {
   margin: 0 !important;
 }
 
-/* IMPORTANT: do NOT constrain footer width (this caused your bar to be centered only) */
-.page__footer .wrapper,
-.site-footer .wrapper {
-  max-width: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Footer sits at bottom */
-.page__footer { margin-top: auto; }
-
-/* Your custom bar (note: your _includes/footer.html should ONLY output <div class="custom-footer">...</div>) */
-.page__footer .custom-footer{
-  width: 100%;
-  background: #2f2f2f;
-  color: #fff;
-  text-align: center;
-  padding: 10px 10px; /* 얇게 */
-  font-size: 14px;
-  margin: 0;
-}
-
-/* If any default footer text sneaks in, hide it */
+/* Hide default theme footer text blocks */
 .page__footer-follow,
 .page__footer-copyright {
   display: none !important;
@@ -150,25 +114,29 @@ body {
   box-sizing: border-box !important;
 }
 
-/* Some themes wrap footer contents */
+/* Remove any inner width constraints */
 .page__footer > footer,
 .page__footer .wrapper,
-.page__footer .page__footer-inner,
-.page__footer .page__footer-copyright,
-.page__footer .page__footer-follow {
+.site-footer .wrapper,
+.page__footer .page__footer-inner {
   max-width: none !important;
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* Your bar */
-.page__footer .custom-footer {
+/* Your footer bar */
+.page__footer .custom-footer{
   width: 100% !important;
+  background: #2f2f2f;
+  color: #fff;
+  text-align: center;
+  padding: 10px 10px; /* 얇게 */
+  font-size: 14px;
   margin: 0 !important;
   border-radius: 0 !important;
 }
 
-/* === FORCE no gap below footer === */
+/* Make sure no artificial gap below */
 body { margin: 0 !important; padding-bottom: 0 !important; }
 .page__footer { margin-bottom: 0 !important; }
