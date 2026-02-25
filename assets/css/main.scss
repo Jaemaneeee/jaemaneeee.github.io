@@ -42,18 +42,6 @@
     "vendor/font-awesome/brands"
 ;
 
-/* Bigger square avatar (safe) */
-.author__avatar {
-  width: 360px;
-  max-width: 360px;
-}
-.author__avatar img {
-  width: 360px;
-  height: auto;
-  border-radius: 0;
-  display: block;
-}
-
 /* Remove default footer background/spacing */
 .page__footer,
 .site-footer {
@@ -97,21 +85,32 @@ body { margin: 0 !important; }
   grid-template-columns: 1fr !important;
 }
 
-/* Center content with comfortable side margins */
-.page__content,
-.archive,
-.page__inner-wrap,
-#main {
-  max-width: 980px;     /* 900~1100 사이로 취향 */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 24px;   /* 모바일/좁은 화면 여백 */
-  padding-right: 24px;
-}
-
-.masthead__inner-wrap {
+/* Center ALL page content consistently */
+.initial-content {
   max-width: 980px;
   margin: 0 auto;
   padding-left: 24px;
   padding-right: 24px;
+}
+
+/* Also center footer content width */
+.page__footer {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.page__footer footer,
+.page__footer .custom-footer {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Remove underline/border under site title */
+.site-title,
+.site-title:visited,
+.site-title:hover {
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
 }
