@@ -5,7 +5,7 @@
  * This file controls what is imported from /_sass
  *
  * Note that the files are processed in the order they are imported, so they are partly
-   sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
+ * sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
  */
 
 @import
@@ -42,25 +42,24 @@
     "vendor/font-awesome/brands"
 ;
 
-/* Remove default footer background/spacing */
-.page__footer,
-.site-footer {
-  background: transparent !important;
-  border-top: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
+/* =========================================================
+   Global safety: prevent horizontal scroll
+   ========================================================= */
+html, body { overflow-x: hidden; }
+
+/* =========================================================
+   Content width: center main content (NOT the navbar)
+   ========================================================= */
+.initial-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
-/* remove inner wrapper spacing if present */
-.page__footer .wrapper,
-.site-footer .wrapper {
-  max-width: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-body { margin: 0 !important; }
-
-/* Hide the left author profile sidebar everywhere */
+/* =========================================================
+   Sidebar: hide everywhere (you wanted full-width content)
+   ========================================================= */
 .sidebar,
 .author__avatar,
 .author__content,
@@ -69,76 +68,74 @@ body { margin: 0 !important; }
   display: none !important;
 }
 
-/* If there is a grid/layout splitting sidebar+content, collapse it */
+/* If theme uses grid split, collapse it */
 .layout--single {
   grid-template-columns: 1fr !important;
 }
 
-/* Also center footer content width */
-.page__footer {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-.page__footer {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-.page__footer .custom-footer{
-  width: 100%;
-  background: #2f2f2f;
-  color: #fff;
-  text-align: center;
-  padding: 12px 10px;
-  font-size: 14px;
-  margin: 0;
-}
-
-
-/* ============================= */
-/* Layout: centered content      */
-/* ============================= */
-.initial-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding-left: 32px;
-  padding-right: 32px;
-}
-
-/* Hide sidebar (only sidebar) */
-.sidebar {
-  display: none !important;
-}
-
+/* =========================================================
+   Site title style (keep simple; avoid nav width bugs)
+   ========================================================= */
 .site-title {
   font-weight: 400 !important;
   text-decoration: none !important;
   border-bottom: 0 !important;
   box-shadow: none !important;
+}
+.site-title:hover { text-decoration: none !important; }
 
-  white-space: nowrap;
-  max-width: 280px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+/* =========================================================
+   FOOTER: clean + full-width + STICKY to bottom
+   ========================================================= */
+
+/* The theme sometimes injects an inline margin-bottom on body.
+   Force it off so footer can sit at the bottom. */
+body { margin-bottom: 0 !important; }
+
+/* Sticky footer layout */
+html, body { height: 100%; }
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Prevent horizontal scroll globally */
-html, body { overflow-x: hidden; }
+/* Main content grows so footer is pushed to the bottom */
+#main { flex: 1 0 auto; }
 
-/* Custom footer full-width bar */
-.custom-footer{
+/* Remove theme footer background/spacing */
+.page__footer,
+.site-footer {
+  background: transparent !important;
+  border-top: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* IMPORTANT: do NOT constrain footer width (this caused your bar to be centered only) */
+.page__footer .wrapper,
+.site-footer .wrapper {
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Footer sits at bottom */
+.page__footer { margin-top: auto; }
+
+/* Your custom bar (note: your _includes/footer.html should ONLY output <div class="custom-footer">...</div>) */
+.page__footer .custom-footer{
   width: 100%;
   background: #2f2f2f;
   color: #fff;
   text-align: center;
-  padding: 12px 10px;
+  padding: 10px 10px; /* 얇게 */
   font-size: 14px;
+  margin: 0;
 }
 
-/* Make sure footer is in normal document flow */
-.page__footer { position: static !important; }
-
-/* Sticky footer layout */
-html, body { height: 100%; }
-body { display: flex; flex-direction: column; }
-.initial-content { flex: 1; }
-.page__footer { margin-top: auto; }
+/* If any default footer text sneaks in, hide it */
+.page__footer-follow,
+.page__footer-copyright {
+  display: none !important;
+}
