@@ -53,3 +53,21 @@
   border-radius: 0;
   display: block;
 }
+
+/* Remove default footer background/spacing */
+.page__footer,
+.site-footer {
+  background: transparent !important;
+  border-top: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* remove inner wrapper spacing if present */
+.page__footer .wrapper,
+.site-footer .wrapper {
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+body { margin: 0 !important; }
