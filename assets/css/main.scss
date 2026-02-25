@@ -146,13 +146,3 @@ body { margin: 0 !important; padding-bottom: 0 !important; }
   display: flex;
   align-items: center;
 }
-
-/* 제목과 탭 사이 간격 조절 */
-.masthead__menu-item--lg {
-  margin-right: 20px;   /* 숫자 줄이면 더 중앙쪽으로 옴 */
-}
-
-/* 탭 간격 */
-.greedy-nav .visible-links > li:not(.masthead__menu-item--lg) {
-  margin-left: 18px;
-}
