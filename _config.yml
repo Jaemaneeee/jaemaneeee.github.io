@@ -23,8 +23,8 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : ""
   name             : "Jaeman Park"
+  avatar           : "Front image.jpg"
   pronouns         : # example: "she/her"  
   bio              : "Life is journey."
   location         : "New Haven, CT"
