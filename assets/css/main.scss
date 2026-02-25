@@ -106,11 +106,13 @@ body { margin: 0 !important; }
   padding-right: 24px;
 }
 
-/* Remove underline/border under site title */
-.site-title,
-.site-title:visited,
-.site-title:hover {
+/* Site title should look like plain text link (no active underline/bold) */
+.site-title {
+  font-weight: 400 !important;
   text-decoration: none !important;
   border-bottom: 0 !important;
   box-shadow: none !important;
+}
+.site-title:hover {
+  text-decoration: none !important;
 }
