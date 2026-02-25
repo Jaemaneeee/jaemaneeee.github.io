@@ -17,11 +17,7 @@ main:
 
   - title: "News"
     url: /News/    
-    
-  - title: "Contact"
-    url: /Contact/
-        
-    
+ 
   # - title: "CV"
   #   url: /cv-json/
 
