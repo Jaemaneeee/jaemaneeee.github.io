@@ -106,31 +106,6 @@ body { margin: 0 !important; }
   text-decoration: none !important;
 }
 
-/* Keep menu items visible and push them right */
-.greedy-nav .visible-links {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-/* Site title stays left */
-.greedy-nav .visible-links > li.masthead__menu-item--lg {
-  margin-right: auto;
-}
-
-/* Spacing ONLY for menu items after the title */
-.greedy-nav .visible-links > li.masthead__menu-item--lg ~ li {
-  margin-left: 18px;   /* 14~20 추천 */
-}
-
-/* Prevent site title from stealing all space */
-.site-title {
-  white-space: nowrap;
-  max-width: 260px;       /* 필요하면 220~300 사이 조절 */
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 /* ============================= */
 /* Layout: centered content      */
 /* ============================= */
