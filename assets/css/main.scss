@@ -71,3 +71,28 @@
   margin: 0 !important;
 }
 body { margin: 0 !important; }
+
+/* Hide the left author profile sidebar everywhere */
+.sidebar,
+.author__avatar,
+.author__content,
+.author__urls-wrapper,
+.author-profile {
+  display: none !important;
+}
+
+/* Expand content area to full width */
+.page,
+.page__content,
+.archive,
+.archive__item,
+.page__inner-wrap,
+#main {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* If there is a grid/layout splitting sidebar+content, collapse it */
+.layout--single {
+  grid-template-columns: 1fr !important;
+}
