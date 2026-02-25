@@ -87,8 +87,7 @@ body { margin: 0 !important; }
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-.page__footer footer,
-.page__footer .custom-footer {
+.page__footer footer {
   max-width: 980px;
   margin: 0 auto;
   padding-left: 24px;
@@ -132,3 +131,19 @@ body { margin: 0 !important; }
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* Prevent horizontal scroll globally */
+html, body { overflow-x: hidden; }
+
+/* Custom footer full-width bar */
+.custom-footer{
+  width: 100%;
+  background: #2f2f2f;
+  color: #fff;
+  text-align: center;
+  padding: 12px 10px;
+  font-size: 14px;
+}
+
+/* Make sure footer is in normal document flow */
+.page__footer { position: static !important; }
