@@ -146,7 +146,7 @@ body { margin: 0 !important; padding-bottom: 0 !important; }
 /* 탭들(About, Research...)이 들어있는 UL을 살짝 왼쪽으로 당김
    transform은 레이아웃 폭 계산에 거의 영향을 안 줘서 햄버거 트리거가 덜 생김 */
 .greedy-nav .visible-links {
-  transform: translateX(-30px);
+  transform: translateX(30px);
 }
 
 /* 화면이 좁아질 때는 이동량 줄여서 안전하게 */
