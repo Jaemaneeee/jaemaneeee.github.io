@@ -8,9 +8,9 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
+site_theme               : "air" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Jaeman Park's website"
-title_separator          : "-"
+title_separator          : ""
 name                     : &name "Jaeman Park"
 description              : &description "Postdoctoral researcher in Chemical and Environmental Engineering at Yale University"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://jaemaneeee.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
