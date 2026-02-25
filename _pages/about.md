@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I was born in Seoul, South Korea. I Received BS in Materials Science and Engineering from Seoul National Univeristy in 2017, and also received Ph.D. from there in 2025. I am currently working as a postdoctoral associate in [Prof. Mingjiang Zhong's group](https://zhongpolylab.yale.edu/) to study how precisely designed polymer architecture affects inerfacial phenomena, such as self-healing, stimuli-responsiveness, ion conduction, and separation. Detailed information about me can be found here >> [Google scholar](https://scholar.google.com/citations?user=w6Hvt60AAAAJ&hl=en&oi=ao) 
+I am currently a postdoc in [Prof. Mingjiang Zhong's group](https://zhongpolylab.yale.edu/) at Yale. I received B.S. in Materials Science and Engineering from Seoul National Univeristy in 2017, and also received Ph.D. from there in 2025. During Ph.D., I was interested in designing functional soft materials and devices by unraveling diverse molecular interactions in polymer networks. To extend the understanding of the effect of molecular interactions on materials properties, I have focused on how precisely designed polymer architecture can affect inerfacial phenomena, such as self-healing, stimuli-responsiveness, ion conduction, and molecular separations.
 
 <div style="display:flex; gap:30px; margin-top:20px;">
   <div>📍 New Haven, CT</div>
