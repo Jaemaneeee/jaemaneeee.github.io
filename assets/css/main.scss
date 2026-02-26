@@ -392,3 +392,14 @@ a i { color: inherit !important; }
   color: var(--global-text-color-light);
   margin-top: 6px;
 }
+
+@media (max-width: 600px) {
+  .masthead__menu-item--lg a {
+    font-size: 0.85em;  /* 숫자 줄이면 더 작아짐 */
+  }
+}
+.greedy-nav button {
+  align-self: flex-start;
+  margin-top: 0;
+  padding-top: 0;
+}
