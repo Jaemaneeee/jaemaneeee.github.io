@@ -1,5 +1,5 @@
 ---
-title: About
+title: Jaeman Park, Ph.D.
 permalink: /
 layout: single
 ---
