@@ -328,13 +328,36 @@ a i { color: inherit !important; }
   text-underline-offset: 2px;
 }
 
-/* publication thumbnail: same box size across formats */
-.pub-thumb{
-  width: 220px;         /* 너비 고정 (원하는 값으로) */
-  height: 140px;        /* 높이 고정 */
-  object-fit: contain;  /* 안 잘리고 박스 안에 맞춤 */
-  background: #fff;     /* 투명 png 대비용 (원하면 삭제) */
-  border-radius: 6px;
+
+/* Publications list layout: text left, image right */
+.pub-item{
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.pub-item__body{
+  flex: 1;
+  min-width: 0; /* 긴 제목 줄바꿈 안전 */
+}
+
+.pub-item__teaser{
+  flex: 0 0 260px; /* 오른쪽 대표그림 칸 너비 */
+}
+
+.pub-item__teaser img{
+  width: 260px;       /* 모든 파일 타입(jpg/png/webp) 동일 폭 */
+  height: 160px;      /* 동일 높이 */
+  object-fit: contain; /* 그림 잘리지 않게(꽉 채우려면 cover) */
   display: block;
 }
 
+/* Prevent any image overflow just in case */
+.archive img { max-width: 100%; height: auto; }
+
+/* Mobile: stack */
+@media (max-width: 900px){
+  .pub-item{ flex-direction: column; }
+  .pub-item__teaser{ flex: none; }
+  .pub-item__teaser img{ width: 100%; height: auto; }
+}
