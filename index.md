@@ -15,7 +15,7 @@ layout: single
       <a href="https://zhongpolylab.yale.edu/" target="_blank" rel="noopener" class="text-link">Prof. Mingjiang Zhong's group</a>
       at Yale.
       I got B.S. in Materials Science and Engineering from Seoul National University (South Korea) in 2017,
-      and also received Ph.D. from there under supervision of <a href="https://mfsm.snu.ac.kr/" target="_blank" rel="noopener" class="text-link">Prof. Jeong-Yun Sun</a> in 2025. During Ph.D., I was interested in designing functional soft materials and devices by unraveling diverse molecular interactions in polymer networks. To extend the understanding of the effect of molecular interactions on materials properties, I have focused on how precisely designed polymer architecture can affect inerfacial phenomena, such as self-healing, stimuli-responsiveness, ion conduction, and molecular separations.
+      and also received Ph.D. from there under supervision of <a href="https://mfsm.snu.ac.kr/" target="_blank" rel="noopener" class="text-link">Prof. Jeong-Yun Sun</a> in 2025. During Ph.D., I was interested in designing functional soft materials and devices by unraveling diverse molecular interactions in polymer networks. To extend the fundamental understanding of polymeric materials, I have focused on precisely designed polymer architectures and their inerfacial phenomena. Outside of research, I enjoy playing basketball, soccer, and watching Youtube.
     </p>
 
   <div class="home-hero__meta">
