@@ -156,3 +156,42 @@ body { margin: 0 !important; padding-bottom: 0 !important; }
 @media (max-width: 700px) {
   .greedy-nav .visible-links { transform: none; }
 }
+
+/* ===== Home hero layout (image left, text right) ===== */
+.home-hero{
+  display:flex;
+  gap:32px;
+  align-items:flex-start;
+}
+
+.home-hero__img img{
+  width:100%;
+  max-width:260px;   /* ← 사진 크기: 여기 숫자 조절 (220~320 추천) */
+  height:auto;
+  border-radius:8px;
+  display:block;
+}
+
+/* 오른쪽 텍스트 영역 */
+.home-hero__text{
+  flex:1;
+  min-width:0;
+}
+
+/* 아래 메타(위치/이메일/스칼라) 가로 정렬 */
+.home-hero__meta{
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+/* 모바일에서는 세로로 쌓이게 */
+@media (max-width: 900px){
+  .home-hero{
+    flex-direction:column;
+  }
+  .home-hero__img img{
+    max-width:320px;
+  }
+}
