@@ -70,7 +70,7 @@ layout: single
 
     <div class="cv-item">
       <div class="cv-item__left">
-        <strong>Postdoctoral Researcher</strong> in Chemical and Environmental Engineering<br>
+        <strong>Postdoctoral Associate</strong> in Chemical and Environmental Engineering<br>
         Yale University, CT, United States<br>
         (PI: Prof. Mingjiang Zhong)
       </div>
