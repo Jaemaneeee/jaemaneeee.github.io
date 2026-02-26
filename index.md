@@ -32,3 +32,47 @@ layout: single
     </a>
   </div>
 </div>
+
+<!-- 여기서부터 CV 섹션 추가 -->
+<hr class="cv-divider">
+
+<div class="cv-section">
+  <div class="cv-section__label">Degree &amp;<br>Education</div>
+  <div class="cv-section__content">
+
+    <div class="cv-item">
+      <div class="cv-item__left">
+        <strong>Ph.D. in Materials Science and Engineering</strong><br>
+        Seoul National University, Seoul, Korea<br>
+        Advisor: Prof. Jeong-Yun Sun
+      </div>
+      <div class="cv-item__right">Mar 2019 – Feb 2025</div>
+    </div>
+
+    <div class="cv-item">
+      <div class="cv-item__left">
+        <strong>B.S. in Materials Science and Engineering</strong><br>
+        Seoul National University, Seoul, Korea
+      </div>
+      <div class="cv-item__right">Mar 2013 – Feb 2017</div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="cv-divider">
+
+<div class="cv-section">
+  <div class="cv-section__label">Research<br>Experience</div>
+  <div class="cv-section__content">
+
+    <div class="cv-item">
+      <div class="cv-item__left">
+        <strong>Postdoctoral Researcher</strong><br>
+        Yale University, Prof. Mingjiang Zhong's group
+      </div>
+      <div class="cv-item__right">2025 – Present</div>
+    </div>
+
+  </div>
+</div>
