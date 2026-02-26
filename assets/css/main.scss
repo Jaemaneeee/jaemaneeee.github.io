@@ -385,3 +385,10 @@ a i { color: inherit !important; }
 .page__content {
   padding-bottom: var(--footer-h) !important;
 }
+
+.img-caption {
+  text-align: center;
+  font-size: 0.85em;
+  color: #888;
+  margin-top: 6px;
+}
