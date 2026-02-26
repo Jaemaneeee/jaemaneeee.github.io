@@ -279,85 +279,80 @@ a i { color: inherit !important; }
   :root { --footer-h: 70px; }
 }
 
-/* Publications simple card layout */
+/* =========================================================
+   Publications Layout (CLEAN VERSION)
+   ========================================================= */
+
 .pub-list{
-  display:flex;
-  flex-direction:column;
-  gap:28px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .pub-card{
-  display:flex;
-  gap:22px;
-  align-items:flex-start;
-  padding-bottom:18px;
-  border-bottom:1px solid rgba(0,0,0,0.12);
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
 }
 
-.pub-text{ flex:1; min-width:0; }
+.pub-text{
+  flex: 1;
+  min-width: 0;
+}
 
 .pub-title a{
-  font-size: 1.00rem;
+  font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
 }
-.pub-title a:hover{ text-decoration: underline; }
+.pub-title a:hover{
+  text-decoration: underline;
+}
 
-.pub-authors{ margin-top:10px; }
-.pub-venue{ margin-top:10px; }
+.pub-authors{
+  margin-top: 8px;
+}
+
+.pub-venue{
+  margin-top: 8px;
+}
+
+/* 오른쪽 대표그림 */
+.pub-thumb{
+  flex: 0 0 260px;
+}
 
 .pub-thumb img{
-  width: 260px;          /* 오른쪽 대표그림 크기 */
-  height: auto;
+  width: 260px;
+  height: 160px;
+  object-fit: contain;   /* 안 잘리고 맞춤 (cover로 바꾸면 꽉 참) */
   border-radius: 6px;
-  display:block;
-}
-
-/* Mobile: stack image under text */
-@media (max-width: 900px){
-  .pub-card{ flex-direction:column; }
-  .pub-thumb img{ width: 100%; max-width: 420px; }
-}
-.pub-authors sup{
-  font-size: 0.7em;
-  vertical-align: super;
-}
-.pub-authors strong{
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-
-/* Publications list layout: text left, image right */
-.pub-item{
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-}
-
-.pub-item__body{
-  flex: 1;
-  min-width: 0; /* 긴 제목 줄바꿈 안전 */
-}
-
-.pub-item__teaser{
-  flex: 0 0 260px; /* 오른쪽 대표그림 칸 너비 */
-}
-
-.pub-item__teaser img{
-  width: 260px;       /* 모든 파일 타입(jpg/png/webp) 동일 폭 */
-  height: 160px;      /* 동일 높이 */
-  object-fit: contain; /* 그림 잘리지 않게(꽉 채우려면 cover) */
   display: block;
 }
 
-/* Prevent any image overflow just in case */
-.archive img { max-width: 100%; height: auto; }
+/* 이미지 절대 카드 밖으로 안 튀게 */
+.pub-card img{
+  max-width: 100%;
+}
 
-/* Mobile: stack */
+/* Mobile: 세로 스택 */
 @media (max-width: 900px){
-  .pub-item{ flex-direction: column; }
-  .pub-item__teaser{ flex: none; }
-  .pub-item__teaser img{ width: 100%; height: auto; }
+  .pub-card{
+    flex-direction: column;
+  }
+
+  .pub-thumb{
+    flex: none;
+  }
+
+  .pub-thumb img{
+    width: 100%;
+    height: auto;
+    max-width: 420px;
+  }
 }
