@@ -252,3 +252,29 @@ a i { color: inherit !important; }
 .page__content p {
   text-align: justify;
 }
+
+/* =========================================================
+   Mobile fix: prevent last content from being covered by footer
+   ========================================================= */
+
+/* Force footer to be in normal document flow (no overlay) */
+.page__footer {
+  position: static !important;
+  clear: both !important;
+  z-index: auto !important;
+}
+
+/* Give the content area extra bottom space (footer height + a little buffer) */
+:root { --footer-h: 52px; } /* footer 높이 (필요하면 44~70px로 조절) */
+
+#main,
+.initial-content,
+.page__inner-wrap,
+.page__content {
+  padding-bottom: var(--footer-h) !important;
+}
+
+/* 특히 모바일에서만 더 안전하게 조금 더 확보 */
+@media (max-width: 900px) {
+  :root { --footer-h: 70px; }
+}
