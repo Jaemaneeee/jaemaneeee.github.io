@@ -297,8 +297,8 @@ a i { color: inherit !important; }
 .pub-text{ flex:1; min-width:0; }
 
 .pub-title a{
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-size: 1.00rem;
+  font-weight: 600;
   text-decoration: none;
 }
 .pub-title a:hover{ text-decoration: underline; }
@@ -317,4 +317,13 @@ a i { color: inherit !important; }
 @media (max-width: 900px){
   .pub-card{ flex-direction:column; }
   .pub-thumb img{ width: 100%; max-width: 420px; }
+}
+.pub-authors sup{
+  font-size: 0.7em;
+  vertical-align: super;
+}
+.pub-authors strong{
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
