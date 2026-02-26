@@ -44,7 +44,8 @@ layout: single
       <div class="cv-item__left">
         <strong>Ph.D. in Materials Science and Engineering</strong><br>
         Seoul National University, Seoul, South Korea<br>
-        Advisor: Prof. Jeong-Yun Sun (<em>2025 Top-honored Ph.D. dissertation</em>)
+        <em>2025 Top-honored Ph.D. dissertation</em><br>
+        Advisor: Prof. Jeong-Yun Sun<br>
         (Thesis: A study on unraveling diverse molecular interactions in polymer networks for designing functional soft materials and devices)
       </div>
       <div class="cv-item__right">Mar 2017 – Feb 2025</div>
@@ -69,16 +70,16 @@ layout: single
 
     <div class="cv-item">
       <div class="cv-item__left">
-        <strong>Postdoctoral Researcher</strong><br>
-        Chemical and Environmental Engineering, Yale University
+        <strong>Postdoctoral Researcher</strong> in Chemical and Environmental Engineering<br>
+        Yale University, CT, United States<br>
         (PI: Prof. Mingjiang Zhong)
       </div>
       <div class="cv-item__right">Mar 2025 – Present</div>
     </div>
     <div class="cv-item">
       <div class="cv-item__left">
-        <strong>Visiting Graduate Student</strong><br>
-        Chemical and Environmental Engineering, Yale University
+        <strong>Visiting Graduate Student</strong> in Chemical and Environmental Engineering<br>
+        Yale University, CT, United States<br>
         (PI: Prof. Mingjiang Zhong)
       </div>
       <div class="cv-item__right">May 2024 – Nov 2024</div>
