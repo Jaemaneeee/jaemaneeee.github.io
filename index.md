@@ -76,4 +76,3 @@ layout: single
 
   </div>
 </div>
-</div>
