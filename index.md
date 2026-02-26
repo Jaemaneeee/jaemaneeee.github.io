@@ -34,4 +34,3 @@ layout: single
     </a>
   </div>
 </div>
-</div>
