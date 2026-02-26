@@ -76,3 +76,27 @@ layout: single
 
   </div>
 </div>
+
+<hr class="cv-divider">
+<div class="cv-section">
+  <div class="cv-section__label">Honors &amp;<br>Awards</div>
+  <div class="cv-section__content">
+
+    <div class="cv-item">
+      <div class="cv-item__left">
+        <strong>수상명</strong><br>
+        수여 기관
+      </div>
+      <div class="cv-item__right">2024</div>
+    </div>
+
+    <div class="cv-item">
+      <div class="cv-item__left">
+        <strong>수상명</strong><br>
+        수여 기관
+      </div>
+      <div class="cv-item__right">2023</div>
+    </div>
+
+  </div>
+</div>
