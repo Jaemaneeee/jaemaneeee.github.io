@@ -33,5 +33,6 @@ layout: single
       <i class="ai ai-google-scholar icon"></i>
     </a>
     </div>
+    </div>
   </div>
 </div>
