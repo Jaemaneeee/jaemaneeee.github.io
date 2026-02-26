@@ -358,75 +358,32 @@ a i { color: inherit !important; }
 }
 
 /* =========================================================
-   Publications LEFT-ALIGNED CLEAN LAYOUT
+   ALIGN ALL CONTENT WITH SITE TITLE ("J")
    ========================================================= */
 
-/* archive 레이아웃의 좌우 패딩 완전 제거 */
-.layout--archive .page__content{
+/* masthead inner wrapper = 기준점 */
+.masthead__inner-wrap{
+  max-width: var(--content-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--content-pad) !important;
+  padding-right: var(--content-pad) !important;
+}
+
+/* greedy-nav 내부 여분 패딩 제거 */
+.greedy-nav{
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* wrapper가 또 가운데 정렬하는 것 방지 */
-.layout--archive .wrapper{
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* pub-list는 전체 폭을 거의 다 쓰되 약간만 여백 */
-.pub-list{
-  width: 100%;
-  max-width: 1400px;   /* 더 왼쪽 느낌 원하면 1600 */
-  margin: 0;           /* 가운데 정렬 제거 */
-  padding-left: 0;     /* 왼쪽 공백 제거 핵심 */
-  padding-right: 24px; /* 오른쪽은 살짝만 */
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-/* 카드도 왼쪽에 붙게 */
-.pub-card{
-  width: 100%;
-  display: flex;
-  gap: 28px;
-  align-items: flex-start;
-  padding-bottom: 22px;
-  border-bottom: 1px solid rgba(0,0,0,0.12);
-}
-
-/* 텍스트 영역 */
-.pub-text{
-  flex: 1;
-  min-width: 0;
-}
-
-/* 오른쪽 썸네일 */
-.pub-thumb{
-  flex: 0 0 260px;
-}
-
-.pub-thumb img{
-  width: 260px;
-  height: 160px;
-  object-fit: contain;
-  border-radius: 6px;
-  display: block;
-}
-
-/* 모바일 */
-@media (max-width: 900px){
-  .pub-card{
-    flex-direction: column;
-  }
-
-  .pub-thumb{
-    flex: none;
-  }
-
-  .pub-thumb img{
-    width: 100%;
-    height: auto;
-    max-width: 420px;
-  }
+/* archive / research / news / publications 동일 정렬 */
+.layout--archive .page__inner-wrap,
+.layout--archive .page__content,
+.layout--single .page__inner-wrap,
+.layout--single .page__content{
+  max-width: var(--content-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--content-pad) !important;
+  padding-right: var(--content-pad) !important;
 }
