@@ -395,7 +395,7 @@ a i { color: inherit !important; }
 
 @media (max-width: 600px) {
   .masthead__menu-item--lg a {
-    font-size: 0.55em;  /* 숫자 줄이면 더 작아짐 */
+    font-size: 0.855em;  /* 숫자 줄이면 더 작아짐 */
     white-space: nowrap;  /* ← 이 줄 추가 */
   }
   
@@ -418,5 +418,12 @@ a i { color: inherit !important; }
   .masthead__inner-wrap {
     padding-top: 0.3em !important;
     padding-bottom: 0.3em !important;
+  }
+  
+  .greedy-nav button {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    line-height: 1 !important;
   }
 }
