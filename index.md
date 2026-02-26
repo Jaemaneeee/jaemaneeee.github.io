@@ -12,10 +12,10 @@ layout: single
   <div class="home-hero__text">
     <p>
       I am currently a postdoc in
-      <a href="https://zhongpolylab.yale.edu/" target="_blank" rel="noopener">Prof. Mingjiang Zhong's group</a>
+      <a href="https://zhongpolylab.yale.edu/" target="_blank" rel="noopener"class="text-link">Prof. Mingjiang Zhong's group</a>
       at Yale.
-      I got B.S. in Materials Science and Engineering from Seoul National University(SNU, South Korea) in 2017,
-      and also received Ph.D. from there in 2025. To extend the understanding of the effect of molecular interactions on materials properties, I have focused on how precisely designed polymer architecture can affect inerfacial phenomena, such as self-healing, stimuli-responsiveness, ion conduction, and molecular separations.
+      I got B.S. in Materials Science and Engineering from Seoul National University (SNU, South Korea) in 2017,
+      and also received Ph.D. from SNU under supervision of <a href="https://zhongpolylab.yale.edu/" target="_blank" rel="noopener"class="text-link">Prof.Jeong-Yun Sun</a> in 2025. During Ph.D., I was interested in designing functional soft materials and devices by unraveling diverse molecular interactions in polymer networks. To extend the understanding of the effect of molecular interactions on materials properties, I have focused on how precisely designed polymer architecture can affect inerfacial phenomena, such as self-healing, stimuli-responsiveness, ion conduction, and molecular separations.
     </p>
 
   <div class="home-hero__meta">
