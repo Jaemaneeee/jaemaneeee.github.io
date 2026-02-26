@@ -58,51 +58,6 @@ body { margin: 0 !important; padding-bottom: 0 !important; }
 }
 
 /* =========================================================
-   1) Align masthead + all page content with same container
-   ========================================================= */
-
-/* NAVBAR(상단) 기준 컨테이너 */
-.masthead__inner-wrap{
-  max-width: var(--content-max) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: var(--content-pad) !important;
-  padding-right: var(--content-pad) !important;
-}
-
-/* greedy-nav 내부 여분 패딩 제거 (탭 위치 흔들림 방지) */
-.greedy-nav{
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* 본문 컨테이너들: 동일한 max-width + 동일한 padding */
-#main,
-.initial-content,
-.page,
-.page__inner-wrap,
-.page__content,
-.archive,
-.entries,
-.list__item,
-.wrapper {
-  max-width: var(--content-max) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: var(--content-pad) !important;
-  padding-right: var(--content-pad) !important;
-}
-
-/* archive 페이지에서 테마가 추가로 padding 주는 경우를 눌러서 “오른쪽 치우침” 방지 */
-.layout--archive .page__inner-wrap,
-.layout--archive .page__content,
-.layout--archive .archive,
-.layout--archive .entries {
-  padding-left: var(--content-pad) !important;
-  padding-right: var(--content-pad) !important;
-}
-
-/* =========================================================
    Sidebar off
    ========================================================= */
 .sidebar,
@@ -370,4 +325,62 @@ a i { color: inherit !important; }
 .pub-list{
   margin-left: 0 !important;
   padding-left: 0 !important;
+}
+
+/* =========================================================
+   ALIGNMENT RESET (배너/본문/아카이브 정렬을 한 기준으로 통일)
+   ========================================================= */
+
+/* 기준값(필요하면 여기만 조절) */
+:root{
+  --content-max: 1600px;
+  --content-pad: 12px;
+}
+
+/* 1) 상단 배너(탭/제목) : 가운데 정렬 + 좌우 패딩, BUT 왼쪽으로 쏠리지 않게 width:100% */
+.masthead__inner-wrap{
+  width: 100% !important;
+  max-width: var(--content-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--content-pad) !important;
+  padding-right: var(--content-pad) !important;
+  box-sizing: border-box !important;
+}
+
+/* greedy-nav가 따로 패딩을 더 먹으면 제거(탭은 움직이지 말 것) */
+.greedy-nav{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* 2) 본문 전체(#main 쪽)도 같은 기준으로 통일 */
+#main,
+.initial-content{
+  width: 100% !important;
+  max-width: var(--content-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--content-pad) !important;
+  padding-right: var(--content-pad) !important;
+  box-sizing: border-box !important;
+}
+
+/* 3) archive(Research/Publications/News)에서 생기는 ‘추가 들여쓰기’ 제거 */
+.layout--archive .archive,
+.layout--archive .page__content,
+.layout--archive .page__inner-wrap{
+  width: 100% !important;
+  max-width: none !important;      /* 상위(#main)가 이미 폭을 잡으니 여기서 또 잡지 말기 */
+  margin: 0 !important;
+  padding-left: 0 !important;      /* 문제의 핵심: archive가 추가로 미는 left padding 제거 */
+  padding-right: 0 !important;
+}
+
+/* 4) Publications 커스텀 리스트는 #main 기준에 맞춰 꽉 차게 */
+.pub-list{
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;           /* 좌우는 #main이 이미 패딩을 줌 */
 }
