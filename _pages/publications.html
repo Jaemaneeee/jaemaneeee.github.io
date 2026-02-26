@@ -9,25 +9,35 @@ author_profile: false
 
 <div class="pub-list">
   {% for p in pubs %}
-    <div class="pub-card"><img class="pub-thumb" src="{{ pub.thumb }}" alt="">
+    <div class="pub-card">
+
       <div class="pub-text">
         <div class="pub-title">
-          <a href="{{ p.paper_url }}" target="_blank" rel="noopener">{{ p.title }}</a>
+          {% if p.paper_url %}
+            <a href="{{ p.paper_url }}" target="_blank" rel="noopener">{{ p.title }}</a>
+          {% else %}
+            {{ p.title }}
+          {% endif %}
         </div>
-        <div class="pub-authors">{{ p.authors }}</div>
+
+        {% if p.authors %}
+          <div class="pub-authors">{{ p.authors }}</div>
+        {% endif %}
+
         <div class="pub-venue">
-  <em>{{ p.venue }}</em>
-  {% if p.volume %} <strong class="pub-volume">{{ p.volume }}</strong>{% endif %}{% if p.pages %}, {{ p.pages }}{% endif %}
-  {% if p.year %} ({{ p.year }}){% endif %}
-</div>
+          {% if p.venue %}<em>{{ p.venue }}</em>{% endif %}
+          {% if p.volume %} <strong class="pub-volume">{{ p.volume }}</strong>{% endif %}
+          {% if p.pages %}, {{ p.pages }}{% endif %}
+          {% if p.year %} ({{ p.year }}){% endif %}
+        </div>
       </div>
 
       {% if p.thumb %}
-      <div class="pub-thumb">
-        <img src="{{ p.thumb }}" alt="Graphical abstract for {{ p.title }}">
-      </div>
+        <div class="pub-thumb">
+          <img src="{{ p.thumb }}" alt="Graphical abstract for {{ p.title }}" loading="lazy">
+        </div>
       {% endif %}
+
     </div>
   {% endfor %}
 </div>
-
