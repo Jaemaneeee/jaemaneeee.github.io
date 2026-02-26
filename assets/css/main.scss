@@ -9,56 +9,83 @@
  */
 
 @import
-    "vendor/breakpoint/breakpoint",
+  "vendor/breakpoint/breakpoint",
 
-    "themes",
-    "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
-    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
+  "themes",
+  "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
+  "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
 
-    "include/mixins",
-    "vendor/susy/susy",
+  "include/mixins",
+  "vendor/susy/susy",
 
-    "layout/reset",
-    "layout/base",
+  "layout/reset",
+  "layout/base",
 
-    "include/utilities",
-    "layout/tables",
-    "layout/buttons",
-    "layout/notices",
-    "layout/masthead",
-    "layout/navigation",
-    "layout/footer",
-    "syntax",
+  "include/utilities",
+  "layout/tables",
+  "layout/buttons",
+  "layout/notices",
+  "layout/masthead",
+  "layout/navigation",
+  "layout/footer",
+  "syntax",
 
-    "layout/forms",
+  "layout/forms",
 
-    "layout/page",
-    "layout/archive",
-    "layout/sidebar",
-    "layout/json_cv",
+  "layout/page",
+  "layout/archive",
+  "layout/sidebar",
+  "layout/json_cv",
 
-    "vendor/font-awesome/fontawesome",
-    "vendor/font-awesome/solid",
-    "vendor/font-awesome/brands"
+  "vendor/font-awesome/fontawesome",
+  "vendor/font-awesome/solid",
+  "vendor/font-awesome/brands"
 ;
 
 /* =========================================================
-   Global safety: prevent horizontal scroll
+   Global safety
    ========================================================= */
 html, body { overflow-x: hidden; }
+body { margin: 0 !important; padding-bottom: 0 !important; }
 
 /* =========================================================
-   Content width: center main content (NOT the navbar)
+   Global layout knobs (edit only here)
    ========================================================= */
-.initial-content {
-  max-width: 2000px;
-  margin: 0 auto;
-  padding-left: 4px;
-  padding-right: 4px;
+:root {
+  --content-max: 1600px; /* 전체 본문 최대 폭 */
+  --content-pad: 12px;   /* 좌우 여백 (원하면 8px까지 줄여도 안전) */
+  --nav-shift: 30px;     /* 탭을 살짝 가운데로 */
 }
 
 /* =========================================================
-   Sidebar: hide everywhere (you wanted full-width content)
+   Content width (override theme max-widths consistently)
+   ========================================================= */
+#main,
+.initial-content,
+.page,
+.page__inner-wrap,
+.page__content,
+.archive,
+.archive__item,
+.entries,
+.list__item,
+.wrapper {
+  max-width: var(--content-max) !important;
+}
+
+.initial-content,
+.page__inner-wrap,
+.page__content,
+.archive,
+.wrapper {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--content-pad) !important;
+  padding-right: var(--content-pad) !important;
+}
+
+/* =========================================================
+   Sidebar off
    ========================================================= */
 .sidebar,
 .author__avatar,
@@ -85,11 +112,77 @@ html, body { overflow-x: hidden; }
 .site-title:hover { text-decoration: none !important; }
 
 /* =========================================================
-   FOOTER: full-width bar, appears ONLY at end of page scroll
-   (NO sticky/flex layout)
+   Nav: move tabs slightly toward center (safe on mobile)
    ========================================================= */
+.greedy-nav .visible-links {
+  transform: translateX(var(--nav-shift));
+}
 
-/* Remove theme footer background/spacing */
+/* 좁아지면 이동량 줄이거나 끄기 */
+@media (max-width: 900px) {
+  .greedy-nav .visible-links { transform: translateX(-10px); }
+}
+@media (max-width: 700px) {
+  .greedy-nav .visible-links { transform: none; }
+}
+
+/* =========================================================
+   Home hero layout (image left, text right)
+   ========================================================= */
+.home-hero {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.home-hero__img img {
+  width: 100%;
+  max-width: 300px; /* 사진 크기 */
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.home-hero__text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* meta block */
+.home-hero__meta { margin-top: 20px; }
+
+.meta-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.meta-icons {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.home-hero__meta .icon {
+  font-size: 1.1rem;
+  color: inherit !important;
+  transition: opacity 0.2s ease;
+}
+
+.meta-icons a:hover .icon {
+  opacity: 0.7;
+}
+
+/* Mobile: stack */
+@media (max-width: 900px) {
+  .home-hero { flex-direction: column; }
+  .home-hero__img img { max-width: 320px; }
+}
+
+/* =========================================================
+   Footer: full-bleed bar at end of page scroll
+   ========================================================= */
 .page__footer,
 .site-footer {
   background: transparent !important;
@@ -98,13 +191,11 @@ html, body { overflow-x: hidden; }
   margin: 0 !important;
 }
 
-/* Hide default theme footer text blocks */
 .page__footer-follow,
 .page__footer-copyright {
   display: none !important;
 }
 
-/* === FORCE footer full-bleed (edge-to-edge) === */
 .page__footer {
   width: 100vw !important;
   margin-left: calc(50% - 50vw) !important;
@@ -112,9 +203,9 @@ html, body { overflow-x: hidden; }
   padding: 0 !important;
   max-width: none !important;
   box-sizing: border-box !important;
+  margin-bottom: 0 !important;
 }
 
-/* Remove any inner width constraints */
 .page__footer > footer,
 .page__footer .wrapper,
 .site-footer .wrapper,
@@ -125,184 +216,39 @@ html, body { overflow-x: hidden; }
   padding: 0 !important;
 }
 
-/* Your footer bar */
-.page__footer .custom-footer{
+.page__footer .custom-footer {
   width: 100% !important;
   background: #2f2f2f;
   color: #fff;
   text-align: center;
-  padding: 10px 10px; /* 얇게 */
+  padding: 10px 10px;
   font-size: 14px;
   margin: 0 !important;
   border-radius: 0 !important;
 }
 
-/* Make sure no artificial gap below */
-body { margin: 0 !important; padding-bottom: 0 !important; }
-.page__footer { margin-bottom: 0 !important; }
-
-/* ===== Nav: move tabs slightly toward center WITHOUT triggering hamburger ===== */
-
-/* 탭들(About, Research...)이 들어있는 UL을 살짝 왼쪽으로 당김
-   transform은 레이아웃 폭 계산에 거의 영향을 안 줘서 햄버거 트리거가 덜 생김 */
-.greedy-nav .visible-links {
-  transform: translateX(30px);
-}
-
-/* 화면이 좁아질 때는 이동량 줄여서 안전하게 */
-@media (max-width: 900px) {
-  .greedy-nav .visible-links { transform: translateX(-10px); }
-}
-@media (max-width: 700px) {
-  .greedy-nav .visible-links { transform: none; }
-}
-
-/* ===== Home hero layout (image left, text right) ===== */
-.home-hero{
-  display:flex;
-  gap:32px;
-  align-items:flex-start;
-}
-
-.home-hero__img img{
-  width:100%;
-  max-width:300px;   /* ← 사진 크기: 여기 숫자 조절 (220~320 추천) */
-  height:auto;
-  border-radius:8px;
-  display:block;
-}
-
-/* 오른쪽 텍스트 영역 */
-.home-hero__text{
-  flex:1;
-  min-width:0;
-}
-
-/* 아래 메타(위치/이메일/스칼라) 가로 정렬 */
-.home-hero__meta{
-  display:flex;
-  gap:24px;
-  flex-wrap:wrap;
-  margin-top:18px;
-}
-
-/* 모바일에서는 세로로 쌓이게 */
-@media (max-width: 900px){
-  .home-hero{
-    flex-direction:column;
-  }
-  .home-hero__img img{
-    max-width:320px;
-  }
-}
-
 /* =========================================================
-   FORCE wider content area (override theme max-widths)
+   Links: theme-aware (dark/light both)
    ========================================================= */
-
-:root {
-  --content-max: 1600px;   /* 원하는 최대 폭 */
-  --content-pad: 8px;     /* 좌우 여백 */
-}
-
-/* 실제 본문 폭을 잡는 컨테이너들이 따로 있음 */
-#main,
-.initial-content,
-.page,
-.page__inner-wrap,
-.page__content,
-.archive,
-.archive__item,
-.entries,
-.list__item {
-  max-width: var(--content-max) !important;
-}
-
-/* 가운데 정렬 + 좌우 패딩 */
-.initial-content,
-.page__inner-wrap,
-.page__content,
-.archive {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: var(--content-pad) !important;
-  padding-right: var(--content-pad) !important;
-}
-
-/* 어떤 테마는 .wrapper로 다시 한번 폭을 제한함 */
-.wrapper {
-  max-width: var(--content-max) !important;
-}
-
-/* ===== Meta layout ===== */
-
-.home-hero__meta {
-  margin-top: 20px;
-}
-
-/* location row */
-.meta-location {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-/* icon row */
-.meta-icons {
-  display: flex;
-  gap: 22px;
-}
-
-/* monochrome icons */
-.home-hero__meta .icon {
-  font-size: 1.1rem;
-  color: Inherit !important;
-  transition: 0.2s ease;
-}
-
-/* hover effect (subtle) */
-.meta-icons a:hover .icon {
-  opacity: 0.7;
-  transform: none;
-}
-/* ===== Inline text links (like Prof. link) ===== */
-.text-link {
-  color: inherit !important;     /* 텍스트 색 그대로 */
-  font-weight: 600;              /* 볼드 */
-  text-decoration: none;
-}
-
-.text-link:hover {
-  text-decoration: underline;
-}
-
-/* =========================================================
-   GLOBAL LINK STYLE (theme-aware, supports dark mode)
-   ========================================================= */
-
 a {
-  color: inherit !important;   /* 텍스트 색 따라감 */
+  color: inherit !important;
   text-decoration: none;
 }
+a:visited { color: inherit !important; }
+a:hover { text-decoration: underline; }
+a i { color: inherit !important; }
 
-a:visited {
+/* Optional: stronger inline text-link (e.g., Prof. link) */
+.text-link {
   color: inherit !important;
+  font-weight: 600;
+  text-decoration: none;
 }
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* 아이콘도 텍스트 색 따라가게 */
-a i {
-  color: inherit !important;
-}
+.text-link:hover { text-decoration: underline; }
 
 /* =========================================================
-   Justify main content text
+   Typography: justify paragraphs
    ========================================================= */
-
 .page__content p {
   text-align: justify;
 }
