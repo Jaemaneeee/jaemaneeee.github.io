@@ -29,10 +29,12 @@
     @include clearfix;
     padding: 0.5em 1em;
     font-family: $sans-serif-narrow;
-    display: flex;              // ← 추가
-    align-items: center;        // ← 추가
-   justify-content: center;    // ← 추가 (완전 가운데)
-
+     
+    @include breakpoint($large) {   // ← large 이상에서만 적용
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  // 또는 center
+  }
     @include breakpoint($x-large) {
       max-width: $x-large;
     }
