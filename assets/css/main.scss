@@ -467,3 +467,8 @@ a i { color: inherit !important; }
   margin-top: 8px;
   line-height: 1.6;
 }
+
+.meta-icons .ai,
+.meta-icons .fas {
+  color: var(--global-text-color) !important;
+}
