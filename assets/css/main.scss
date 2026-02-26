@@ -53,33 +53,51 @@ body { margin: 0 !important; padding-bottom: 0 !important; }
    ========================================================= */
 :root {
   --content-max: 1600px; /* 전체 본문 최대 폭 */
-  --content-pad: 12px;   /* 좌우 여백 (원하면 8px까지 줄여도 안전) */
-  --nav-shift: 30px;     /* 탭을 살짝 가운데로 */
+  --content-pad: 12px;   /* 좌우 여백 */
+  --footer-h: 52px;      /* footer 높이 */
 }
 
 /* =========================================================
-   Content width (override theme max-widths consistently)
+   1) Align masthead + all page content with same container
    ========================================================= */
+
+/* NAVBAR(상단) 기준 컨테이너 */
+.masthead__inner-wrap{
+  max-width: var(--content-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--content-pad) !important;
+  padding-right: var(--content-pad) !important;
+}
+
+/* greedy-nav 내부 여분 패딩 제거 (탭 위치 흔들림 방지) */
+.greedy-nav{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* 본문 컨테이너들: 동일한 max-width + 동일한 padding */
 #main,
 .initial-content,
 .page,
 .page__inner-wrap,
 .page__content,
 .archive,
-.archive__item,
 .entries,
 .list__item,
 .wrapper {
   max-width: var(--content-max) !important;
-}
-
-.initial-content,
-.page__inner-wrap,
-.page__content,
-.archive,
-.wrapper {
   margin-left: auto !important;
   margin-right: auto !important;
+  padding-left: var(--content-pad) !important;
+  padding-right: var(--content-pad) !important;
+}
+
+/* archive 페이지에서 테마가 추가로 padding 주는 경우를 눌러서 “오른쪽 치우침” 방지 */
+.layout--archive .page__inner-wrap,
+.layout--archive .page__content,
+.layout--archive .archive,
+.layout--archive .entries {
   padding-left: var(--content-pad) !important;
   padding-right: var(--content-pad) !important;
 }
@@ -112,21 +130,6 @@ body { margin: 0 !important; padding-bottom: 0 !important; }
 .site-title:hover { text-decoration: none !important; }
 
 /* =========================================================
-   Nav: move tabs slightly toward center (safe on mobile)
-   ========================================================= */
-.greedy-nav .visible-links {
-  transform: translateX(var(--nav-shift));
-}
-
-/* 좁아지면 이동량 줄이거나 끄기 */
-@media (max-width: 900px) {
-  .greedy-nav .visible-links { transform: translateX(-10px); }
-}
-@media (max-width: 700px) {
-  .greedy-nav .visible-links { transform: none; }
-}
-
-/* =========================================================
    Home hero layout (image left, text right)
    ========================================================= */
 .home-hero {
@@ -137,7 +140,7 @@ body { margin: 0 !important; padding-bottom: 0 !important; }
 
 .home-hero__img img {
   width: 100%;
-  max-width: 300px; /* 사진 크기 */
+  max-width: 300px;
   height: auto;
   border-radius: 8px;
   display: block;
@@ -204,6 +207,11 @@ body { margin: 0 !important; padding-bottom: 0 !important; }
   max-width: none !important;
   box-sizing: border-box !important;
   margin-bottom: 0 !important;
+
+  /* IMPORTANT: footer overlay 방지 */
+  position: static !important;
+  clear: both !important;
+  z-index: auto !important;
 }
 
 .page__footer > footer,
@@ -227,6 +235,18 @@ body { margin: 0 !important; padding-bottom: 0 !important; }
   border-radius: 0 !important;
 }
 
+/* 본문 마지막이 footer에 가려지는 문제(모바일 포함) 방지 */
+#main,
+.initial-content,
+.page__inner-wrap,
+.page__content {
+  padding-bottom: var(--footer-h) !important;
+}
+
+@media (max-width: 900px) {
+  :root { --footer-h: 70px; }
+}
+
 /* =========================================================
    Links: theme-aware (dark/light both)
    ========================================================= */
@@ -238,7 +258,6 @@ a:visited { color: inherit !important; }
 a:hover { text-decoration: underline; }
 a i { color: inherit !important; }
 
-/* Optional: stronger inline text-link (e.g., Prof. link) */
 .text-link {
   color: inherit !important;
   font-weight: 600;
@@ -254,45 +273,23 @@ a i { color: inherit !important; }
 }
 
 /* =========================================================
-   Mobile fix: prevent last content from being covered by footer
+   Publications Layout (LEFT-aligned, fixed thumb box)
    ========================================================= */
 
-/* Force footer to be in normal document flow (no overlay) */
-.page__footer {
-  position: static !important;
-  clear: both !important;
-  z-index: auto !important;
-}
-
-/* Give the content area extra bottom space (footer height + a little buffer) */
-:root { --footer-h: 52px; } /* footer 높이 (필요하면 44~70px로 조절) */
-
-#main,
-.initial-content,
-.page__inner-wrap,
-.page__content {
-  padding-bottom: var(--footer-h) !important;
-}
-
-/* 특히 모바일에서만 더 안전하게 조금 더 확보 */
-@media (max-width: 900px) {
-  :root { --footer-h: 70px; }
-}
-
-/* =========================================================
-   Publications Layout (CLEAN VERSION)
-   ========================================================= */
-
+/* Publications list: 컨테이너는 “같은 padding” 기준으로만 정렬 */
 .pub-list{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 12px;
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 !important;                /* 가운데 정렬 제거 */
+  padding: 0 !important;               /* 바깥 padding은 page__content가 담당 */
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
+/* 카드 */
 .pub-card{
+  width: 100%;
   display: flex;
   gap: 28px;
   align-items: flex-start;
@@ -314,15 +311,17 @@ a i { color: inherit !important; }
   text-decoration: underline;
 }
 
-.pub-authors{
-  margin-top: 8px;
+.pub-authors{ margin-top: 8px; }
+.pub-venue{ margin-top: 8px; }
+
+/* 내 이름 강조(밑줄 복구) */
+.pub-authors strong{
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
-.pub-venue{
-  margin-top: 8px;
-}
-
-/* 오른쪽 대표그림 */
+/* 오른쪽 대표그림 “고정 박스” */
 .pub-thumb{
   flex: 0 0 260px;
 }
@@ -330,60 +329,21 @@ a i { color: inherit !important; }
 .pub-thumb img{
   width: 260px;
   height: 160px;
-  object-fit: contain;   /* 안 잘리고 맞춤 (cover로 바꾸면 꽉 참) */
+  object-fit: contain; /* 통일감: 안 잘림. 꽉 채우려면 cover */
   border-radius: 6px;
   display: block;
 }
 
-/* 이미지 절대 카드 밖으로 안 튀게 */
-.pub-card img{
-  max-width: 100%;
-}
+/* 어떤 이미지도 카드 밖으로 안 튀게 */
+.pub-card img{ max-width: 100%; }
 
 /* Mobile: 세로 스택 */
 @media (max-width: 900px){
-  .pub-card{
-    flex-direction: column;
-  }
-
-  .pub-thumb{
-    flex: none;
-  }
-
+  .pub-card{ flex-direction: column; }
+  .pub-thumb{ flex: none; }
   .pub-thumb img{
     width: 100%;
     height: auto;
     max-width: 420px;
   }
-}
-
-/* =========================================================
-   ALIGN ALL CONTENT WITH SITE TITLE ("J")
-   ========================================================= */
-
-/* masthead inner wrapper = 기준점 */
-.masthead__inner-wrap{
-  max-width: var(--content-max) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: var(--content-pad) !important;
-  padding-right: var(--content-pad) !important;
-}
-
-/* greedy-nav 내부 여분 패딩 제거 */
-.greedy-nav{
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* archive / research / news / publications 동일 정렬 */
-.layout--archive .page__inner-wrap,
-.layout--archive .page__content,
-.layout--single .page__inner-wrap,
-.layout--single .page__content{
-  max-width: var(--content-max) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: var(--content-pad) !important;
-  padding-right: var(--content-pad) !important;
 }
