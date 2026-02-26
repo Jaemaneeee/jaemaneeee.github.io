@@ -399,3 +399,18 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+.wide {
+  .page {
+    @include breakpoint($large) {
+      @include span(12 of 12);
+      @include prefix(0 of 12);
+      @include suffix(0 of 12);
+      padding-right: 0;
+    }
+
+    @include breakpoint($x-large) {
+      padding-right: 0;
+    }
+  }
+}
