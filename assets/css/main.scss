@@ -327,3 +327,14 @@ a i { color: inherit !important; }
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+/* publication thumbnail: same box size across formats */
+.pub-thumb{
+  width: 220px;         /* 너비 고정 (원하는 값으로) */
+  height: 140px;        /* 높이 고정 */
+  object-fit: contain;  /* 안 잘리고 박스 안에 맞춤 */
+  background: #fff;     /* 투명 png 대비용 (원하면 삭제) */
+  border-radius: 6px;
+  display: block;
+}
+
