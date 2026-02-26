@@ -9,7 +9,7 @@ author_profile: false
 
 <div class="pub-list">
   {% for p in pubs %}
-    <div class="pub-card">
+    <div class="pub-card"><img class="pub-thumb" src="{{ pub.thumb }}" alt="">
       <div class="pub-text">
         <div class="pub-title">
           <a href="{{ p.paper_url }}" target="_blank" rel="noopener">{{ p.title }}</a>
