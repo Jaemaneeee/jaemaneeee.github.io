@@ -43,18 +43,19 @@ layout: single
     <div class="cv-item">
       <div class="cv-item__left">
         <strong>Ph.D. in Materials Science and Engineering</strong><br>
-        Seoul National University, Seoul, Korea<br>
-        Advisor: Prof. Jeong-Yun Sun
+        Seoul National University, Seoul, South Korea<br>
+        Advisor: Prof. Jeong-Yun Sun (<em>2025 Top-honored Ph.D. dissertation</em>)
+        (Thesis: A study on unraveling diverse molecular interactions in polymer networks for designing functional soft materials and devices)
       </div>
-      <div class="cv-item__right">Mar 2019 – Feb 2025</div>
+      <div class="cv-item__right">Mar 2017 – Feb 2025</div>
     </div>
 
     <div class="cv-item">
       <div class="cv-item__left">
         <strong>B.S. in Materials Science and Engineering</strong><br>
-        Seoul National University, Seoul, Korea
+        Seoul National University, Seoul, South Korea
       </div>
-      <div class="cv-item__right">Mar 2013 – Feb 2017</div>
+      <div class="cv-item__right">Mar 2012 – Feb 2017</div>
     </div>
 
   </div>
@@ -69,11 +70,20 @@ layout: single
     <div class="cv-item">
       <div class="cv-item__left">
         <strong>Postdoctoral Researcher</strong><br>
-        Yale University, Prof. Mingjiang Zhong's group
+        Chemical and Environmental Engineering, Yale University
+        (PI: Prof. Mingjiang Zhong)
       </div>
-      <div class="cv-item__right">2025 – Present</div>
+      <div class="cv-item__right">Mar 2025 – Present</div>
     </div>
-
+    <div class="cv-item">
+      <div class="cv-item__left">
+        <strong>Visiting Graduate Student</strong><br>
+        Chemical and Environmental Engineering, Yale University
+        (PI: Prof. Mingjiang Zhong)
+      </div>
+      <div class="cv-item__right">May 2024 – Nov 2024</div>
+    </div>
+    
   </div>
 </div>
 
@@ -84,18 +94,34 @@ layout: single
 
     <div class="cv-item">
       <div class="cv-item__left">
-        <strong>수상명</strong><br>
-        수여 기관
+        <strong>Best-honored Ph.D. Dissertation</strong><br>
+        DMSE, SNU, South Korea
+      </div>
+      <div class="cv-item__right">2025</div>
+    </div>
+
+    <div class="cv-item">
+      <div class="cv-item__left">
+        <strong>Long-term Study-abroad Scholarship</strong><br>
+        Office of Global Affairs, SNU, South Korea
       </div>
       <div class="cv-item__right">2024</div>
     </div>
 
     <div class="cv-item">
       <div class="cv-item__left">
-        <strong>수상명</strong><br>
-        수여 기관
+        <strong>Green-Nuri Scholarship</strong><br>
+        Cheongwon Academy, South Korea
       </div>
-      <div class="cv-item__right">2023</div>
+      <div class="cv-item__right">2019-2020</div>
+    </div>
+
+    <div class="cv-item">
+      <div class="cv-item__left">
+        <strong>Korean Governmental Scholarship for outstanding students</strong><br>
+        Korea Student Aid Foundation, South Korea
+      </div>
+      <div class="cv-item__right">2012-2016</div>
     </div>
 
   </div>
