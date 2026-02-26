@@ -2,35 +2,28 @@
 layout: archive
 title: "Publications"
 permalink: /Publications/
-author_profile: true
+author_profile: false
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+{% assign pubs = site.publications | sort: "year" | reverse %}
 
-{% include base_path %}
+<div class="pub-list">
+  {% for p in pubs %}
+    <div class="pub-card">
+      <div class="pub-text">
+        <div class="pub-title">
+          <a href="{{ p.paper_url }}" target="_blank" rel="noopener">{{ p.title }}</a>
+        </div>
+        <div class="pub-authors">{{ p.authors }}</div>
+        <div class="pub-venue"><em>{{ p.venue }}</em>{% if p.year %} ({{ p.year }}){% endif %}</div>
+      </div>
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
+      {% if p.thumb %}
+      <div class="pub-thumb">
+        <img src="{{ p.thumb }}" alt="Graphical abstract for {{ p.title }}">
+      </div>
       {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
+    </div>
   {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
-
+</div>
 
