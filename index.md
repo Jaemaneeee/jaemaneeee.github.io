@@ -7,6 +7,7 @@ layout: single
 <div class="home-hero">
   <div class="home-hero__img">
     <img src="/images/Front%20image.jpg" alt="Jaeman Park">
+    <p class="img-caption"><em>"Life is journey."</em></p>
   </div>
 
   <div class="home-hero__text">
