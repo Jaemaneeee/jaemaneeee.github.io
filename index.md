@@ -20,15 +20,18 @@ layout: single
 
   <div class="home-hero__meta">
   <span><i class="fas fa-location-dot icon"></i> New Haven, CT</span>
-  <span> <a href="mailto:jae-man.park@yale.edu" class="icon-link">
-  <i class="fas fa-envelope icon"></i> Email
-</a></span>
-  <span> <a href="https://scholar.google.com/citations?user=w6Hvt60AAAAJ&hl=en&oi=ao"
+  </div>
+  <div class="meta-icons">
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jae-man.park@yale.edu"
        target="_blank" rel="noopener"
-       class="icon-link">
-      <i class="ai ai-google-scholar icon"></i> Google Scholar
+       aria-label="Email">
+      <i class="fas fa-envelope icon"></i>
     </a>
-  </span>
+    <a href="https://scholar.google.com/citations?user=w6Hvt60AAAAJ&hl=en&oi=ao"
+       target="_blank" rel="noopener"
+       aria-label="Google Scholar">
+      <i class="ai ai-google-scholar icon"></i>
+    </a>
     </div>
   </div>
 </div>
