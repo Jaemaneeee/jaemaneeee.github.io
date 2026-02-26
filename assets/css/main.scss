@@ -356,3 +356,20 @@ a i { color: inherit !important; }
     max-width: 420px;
   }
 }
+
+/* ===========================
+   Publications page centering fix
+   =========================== */
+
+/* (1) archive 레이아웃이 남겨둔 좌/우 패딩을 Publications에서만 제거 */
+.layout--archive .page__content{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* (2) 네 pub-list가 스스로 가운데 정렬/폭을 책임지게 */
+.pub-list{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
