@@ -307,3 +307,11 @@ a:active {
 a i {
   color: inherit !important;
 }
+
+/* =========================================================
+   Justify main content text
+   ========================================================= */
+
+.page__content p {
+  text-align: justify;
+}
