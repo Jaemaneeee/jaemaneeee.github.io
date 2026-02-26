@@ -15,7 +15,12 @@ author_profile: false
           <a href="{{ p.paper_url }}" target="_blank" rel="noopener">{{ p.title }}</a>
         </div>
         <div class="pub-authors">{{ p.authors }}</div>
-        <div class="pub-venue"><em>{{ p.venue }}</em>{% if p.year %} ({{ p.year }}){% endif %}</div>
+        <div class="pub-venue">
+  <em>{{ p.venue }}</em>
+  {% if p.volume %} <strong class="pub-volume">{{ p.volume }}</strong>{% endif %}
+  {% if p.pages %}, {{ p.pages }}{% endif %}
+  {% if p.year %} ({{ p.year }}){% endif %}
+</div>
       </div>
 
       {% if p.thumb %}
