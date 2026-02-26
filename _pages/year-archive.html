@@ -15,7 +15,10 @@ classes: wide
     <div class="news-date">{{ post.date | date: "%B %d, %Y" }}</div>
     {% if post.image %}
       <div class="news-thumb">
-        <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy">
+        <img src="{{ post.image }}" 
+         alt="{{ post.title }}" 
+         loading="lazy"
+         {% if post.image_width %}style="max-width: {{ post.image_width }}"{% endif %}>
       </div>
     {% endif %}
     {% if post.excerpt %}
