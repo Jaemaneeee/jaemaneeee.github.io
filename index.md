@@ -4,16 +4,28 @@ permalink: /
 layout: single
 ---
 
-  <!-- LEFT: Image -->
-  <div style="flex:1;">
-    <img src="/images/Front image.jpg" 
-         style="width:100%; max-width:280px; border-radius:6px;">
+div class="home-hero">
+  <div class="home-hero__img">
+    <img src="/images/Front%20image.jpg" alt="Jaeman Park">
   </div>
 
-I am currently a postdoc in [Prof. Mingjiang Zhong's group](https://zhongpolylab.yale.edu/) at Yale. I received B.S. in Materials Science and Engineering from Seoul National Univeristy in 2017, and also received Ph.D. from there in 2025. During Ph.D., I was interested in designing functional soft materials and devices by unraveling diverse molecular interactions in polymer networks. To extend the understanding of the effect of molecular interactions on materials properties, I have focused on how precisely designed polymer architecture can affect inerfacial phenomena, such as self-healing, stimuli-responsiveness, ion conduction, and molecular separations.
-    
-<div style="display:flex; gap:30px; margin-top:30px;">
-  <div>📍 New Haven, CT</div>
-  <div>✉ jae-man.park@yale.edu</div>
-  <div><a href="https://scholar.google.com">Google Scholar</a></div>
+  <div class="home-hero__text">
+    <p>
+      I am currently a postdoc in
+      <a href="https://zhongpolylab.yale.edu/" target="_blank" rel="noopener">Prof. Mingjiang Zhong's group</a>
+      at Yale.
+      I received B.S. in Materials Science and Engineering from Seoul National University in 2017,
+      and received Ph.D. from there in 2025.    </p>
+
+    <p>
+      During my Ph.D., I was interested in designing functional soft materials and devices by
+      unraveling diverse molecular interactions in polymer networks.
+    </p>
+
+    <div class="home-hero__meta">
+      <span>📍 New Haven, CT</span>
+      <span>✉ <a href="mailto:jae-man.park@yale.edu">jae-man.park@yale.edu</a></span>
+      <span><a href="https://scholar.google.com/citations?user=w6Hvt60AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a></span>
+    </div>
+  </div>
 </div>
