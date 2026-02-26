@@ -276,3 +276,34 @@ body { margin: 0 !important; padding-bottom: 0 !important; }
 .text-link:hover {
   text-decoration: underline;
 }
+
+/* =========================================================
+   GLOBAL LINK STYLE (site-wide black links)
+   ========================================================= */
+
+/* 기본 링크 */
+a {
+  color: #222 !important;
+  text-decoration: none;
+}
+
+/* 방문한 링크 */
+a:visited {
+  color: #222 !important;
+}
+
+/* hover 시 */
+a:hover {
+  color: #222 !important;
+  text-decoration: underline;
+}
+
+/* active 상태 */
+a:active {
+  color: #222 !important;
+}
+
+/* 아이콘 링크도 동일 색 유지 */
+a i {
+  color: inherit !important;
+}
