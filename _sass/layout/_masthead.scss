@@ -51,13 +51,6 @@
     clear: both;
     list-style-type: none;
   }
-   ul.visible-links {        // ← 이 블록에
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-left: 30%;      // ← 이 줄 추가
-  }
 }
 
 .masthead__menu-item {
