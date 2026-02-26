@@ -31,8 +31,8 @@ layout: single
       <i class="ai ai-google-scholar icon"></i>
     </a>
   </div>
+ </div>
 </div>
-
 <!-- 여기서부터 CV 섹션 추가 -->
 <hr class="cv-divider">
 
@@ -75,4 +75,5 @@ layout: single
     </div>
 
   </div>
+</div>
 </div>
