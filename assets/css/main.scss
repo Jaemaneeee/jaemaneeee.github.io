@@ -396,11 +396,23 @@ a i { color: inherit !important; }
 @media (max-width: 600px) {
   .masthead__menu-item--lg a {
     font-size: 0.55em;  /* 숫자 줄이면 더 작아짐 */
+    white-space: nowrap;  /* ← 이 줄 추가 */
   }
+  
+  .masthead__menu-item--lg {
+    white-space: nowrap;  /* ← 이 줄도 추가 */
+  }
+  
+ .greedy-nav {
+    display: flex;
+    align-items: flex-start;  /* ← flex-start 로 변경 */
+  }
+
 .greedy-nav button {
   align-self: flex-start;
   margin-top: 0;
   padding-top: 0;
+  flex-shrink: 0; 
 }
   /* 배너 전체 높이 줄이기 */
   .masthead__inner-wrap {
