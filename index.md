@@ -13,7 +13,7 @@ layout: single
   <div class="home-hero__text">
     <p>
       I am currently a postdoc in Chemical and Environmental Engineering (<a href="https://zhongpolylab.yale.edu/" target="_blank" rel="noopener" class="text-link">Prof. Mingjiang Zhong's group</a>) at Yale.
-      I got Ph.D. in Materials Science and Engineering from Seoul National University, under supervision of <a href="https://mfsm.snu.ac.kr/" target="_blank" rel="noopener" class="text-link">Prof. Jeong-Yun Sun</a>. During Ph.D., I investigated how diverse molecular interactions in polymers and gels affect the functionality and the properties of soft materials and devices. To extend the fundamental understanding of polymeric materials, I am studying precisely designed polymer architectures and their inerfacial phenomena. Outside of research, I enjoy playing basketball, soccer, and watching Youtube.
+      I got Ph.D. in Materials Science and Engineering from Seoul National University, under supervision of <a href="https://mfsm.snu.ac.kr/" target="_blank" rel="noopener" class="text-link">Prof. Jeong-Yun Sun</a>. During Ph.D., I investigated how diverse molecular interactions in polymers and gels affect the functionality and the properties of soft materials and devices. To extend the fundamental understanding of polymeric materials, I am studying precisely designed polymer architectures and their interfacial phenomena. Outside of research, I enjoy playing basketball, soccer, and watching Youtube.
     </p>
 
   <div class="home-hero__meta">
